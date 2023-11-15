@@ -13,7 +13,6 @@ from quotes import random_word
 from quotes import random_quote
 
 
-
 # morse chart
 MORSE = {
     "A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".",
@@ -40,8 +39,6 @@ COPRIME_26 = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
 
 # punctuation characters
 PUNCTUATION = '''!()-[]{};:'"\,,<>./?@#$%^&*_~'''
-
-
 
 
 
@@ -72,6 +69,7 @@ def to_morse(plain: str) -> str:
     return morse_text
 
 
+
 # fractionated morse cipher
 def fractionated(plain: str, author: str):
     # translate plaintext to morse
@@ -98,6 +96,7 @@ def fractionated(plain: str, author: str):
     # print question
     print(f"Solve this Fractionated Morse cipher by {author} that ends with the word {plain[plain.rindex(' '):].upper()}\n")
     print("  ".join(cipher_text))
+
 
 
 # complete columnar transposition cipher
@@ -140,7 +139,6 @@ def columnar(plain: str, author: str):
 
 
 
-
 # porta cipher
 def porta(plain: str, author: str):
     plaintext = get_letters(plain)
@@ -168,6 +166,7 @@ def porta(plain: str, author: str):
     print(ciphertext)
 
 
+
 # create invertible hill cipher key
 def hill_key() -> list:
     rand_digits = lambda : [random.randint(0, 25) for i in range(4)]
@@ -177,9 +176,11 @@ def hill_key() -> list:
     return key
 
 
+
 # whether key is invertible or not
 def is_invertible(key: list) -> bool:
     return (key[0] * key[3]) - (key[1] * key[2]) in COPRIME_26
+
 
 
 # 2x2 hill cipher
@@ -223,6 +224,7 @@ def hill3(plain: str, author: str):
 # nihilist cipher
 def nihilist(plain: str, author: str):
     pass
+
 
 
 if __name__ == "__main__":

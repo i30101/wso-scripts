@@ -9,10 +9,8 @@ import requests
 import ast
 
 
-
 # read API key
 KEY = open("./key.txt").read()
-
 
 
 
