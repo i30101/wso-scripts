@@ -42,6 +42,11 @@ PUNCTUATION = '''!()-[]{};:'"\,,<>./?@#$%^&*_~'''
 
 
 
+# turns letters into list of numbers
+def to_numbers(plain: str) -> list:
+    return [ALPHABET.index(letter) for letter in plain]
+
+
 # removes all puncutation and spaces (leaves only letters)
 def get_letters(plain: str) -> str:
     return [letter for letter in plain.upper() if letter in ALPHABET]
@@ -184,11 +189,13 @@ def is_invertible(key: list) -> bool:
 
 
 # 2x2 hill cipher
-def hill(plain: str, author: str, decryption: bool = True):
+def hill(plain: str, author: str, k: str = None, decryption: bool = True):
     plaintext = get_letters(plain)
 
-    # generate key
+    # generate key if key not already given
     key = hill_key()
+    if k is not None:
+        key = [ALPHABET.index(letter) for letter in k]
     key_text = "".join([ALPHABET[k] for k in key])
 
     # person is encoding plaintext
@@ -224,6 +231,7 @@ def hill3(plain: str, author: str):
 # nihilist cipher
 def nihilist(plain: str, author: str):
     pass
+
 
 
 

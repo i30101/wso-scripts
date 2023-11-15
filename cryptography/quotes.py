@@ -10,7 +10,7 @@ import ast
 
 
 # read API key
-KEY = open("./key.txt").read()
+KEY = open("./cryptography/key.txt").read()
 
 
 
