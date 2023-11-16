@@ -32,7 +32,7 @@ void forward(double seconds) {
   // run motors
   leftMotor.run(-speed);
   rightMotor.run(speed);
-  delay(seconds * 100);
+  delay(seconds * 1000);
 
   // stop motors
   leftMotor.stop();
