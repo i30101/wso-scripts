@@ -28,13 +28,11 @@ int turnTime = 1000;
  * @note MUST CALIBRATE!
  * @param meters the distance the robot should travel
  */
-void forward(double centimeter) {
+void forward(double seconds) {
   // run motors
   leftMotor.run(-speed);
   rightMotor.run(speed);
-  double secondsPerCentimeter = 1.0/44;
-  Serial.println(centimeter * secondsPerCentimeter);
-  delay(centimeter * secondsPerCentimeter * 1000);
+  delay(seconds * 100);
 
   // stop motors
   leftMotor.stop();
@@ -122,7 +120,7 @@ void setup() {
   // nothing to set up
   Serial.begin(9600);
   delay(1000);
-  forward(100);
+  forward(2);
 }
 
 
