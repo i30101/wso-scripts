@@ -5,6 +5,7 @@ This repository contains a number of coding tools for Woodson Science Olympiad.
 
 ## arduino
 ![version](https://img.shields.io/badge/verison-1.0.0-blue)
+![version](https://img.shields.io/static/v1?label=Arduino&message=v2.2.1&logo=arduino&logoColor=white&color=blue)
 
 This folder contains code for events involving the Arduino platform. 
 
