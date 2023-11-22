@@ -53,8 +53,8 @@ def get_letters(plain: str) -> str:
 
 
 # removes punctuation
-def remove_punctuation(string: str, strip: bool = True) -> str:
-    cleaned = string.replace(" ", "") if strip else string
+def remove_punctuation(plain: str, strip: bool = True) -> str:
+    cleaned = plain
     for punc in PUNCTUATION:
         cleaned = cleaned.replace(punc, "")
     return cleaned
@@ -62,7 +62,7 @@ def remove_punctuation(string: str, strip: bool = True) -> str:
 
 # translates text to morse
 def to_morse(plain: str) -> str:
-    plaintext = get_letters(plain)
+    plaintext = remove_punctuation(plain).upper()
     morse_text = ""
     for i, char in enumerate(plaintext):
         if char == " ":
@@ -104,8 +104,46 @@ def fractionated(plain: str, author: str):
 
 
 
-# complete columnar transposition cipher
-def columnar(plain: str, author: str):
+# complete columnar transposition cipehr
+def columnar():
+    new_quote = random_quote()
+    quote = ""
+    author = ""
+    num_columns = 0
+
+    # find a complete quote
+    griddable = False
+    while not griddable:
+        new_quote = random_quote()
+        quote = get_letters(new_quote["quote"])
+        author = new_quote["author"]
+
+        available_columns = list(range(4, 10))
+
+        for i in range(len(available_columns)):
+            rand_column = random.choice(available_columns)
+            if len(quote) % rand_column == 0:
+                num_columns = rand_column
+                griddable = True
+                break
+            available_columns.remove(rand_column)
+
+    # put letters in columns
+    columns = ["" for i in range(num_columns)]
+    for i in range(len(quote)):
+        columns[i % num_columns] += quote[i]
+
+    # shuffle columns
+    random.shuffle(columns)
+
+    print(f"Solve this Complete Columnar Transposition cipher by {author}.")
+    print("".join(columns))
+
+
+
+# incompelte columnar transposition cipher
+# some columns are incomplete, imperfect grid of letters
+def columnar_key(plain: str, author: str):
     plaintext = get_letters(plain)
     # print(plaintext)
 
@@ -137,7 +175,6 @@ def columnar(plain: str, author: str):
 
         num_list.remove(lowest_letter_num)
         index_list.remove(lowest_letter_index)
-
 
     print(f"Solve this Complete Columnar Transposition cipher by {author} with the keyword {keyword}.")
     print(ciphertext)
@@ -236,9 +273,6 @@ def nihilist(plain: str, author: str):
 
 
 if __name__ == "__main__":
-    encoders = [fractionated, fractionated, porta, porta, hill, hill, columnar, columnar]
-    for encoder in encoders:
+    for i in range(16):
         quote = random_quote()
-        plaintext = quote["quote"]
-        author = quote["author"]
-        encoder(plaintext, author)
+        fractionated(quote["quote"], quote["author"])
