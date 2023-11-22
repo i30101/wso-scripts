@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 2.0.0
+# Version: 2.0.1
 # Since: 25 October 2023
 # Quote generation tools
 
@@ -10,7 +10,12 @@ import ast
 
 
 # read API key
-KEY = open("./cryptography/key.txt").read()
+lines = None
+with open("./cryptography/key.txt") as file:
+    lines = file.readlines()
+
+KEY = lines[0].strip()
+URL = lines[1].strip()
 
 
 
@@ -21,7 +26,7 @@ def is_isogram(word: str) -> bool:
 
 # get random word 
 def random_word(isogram: bool = True, min: int = 4, max: int = 8) -> str:
-    word_api = "https://api.api-ninjas.com/v1/randomword"
+    word_api = URL + "randomword"
     while True:
         # get word from API
         response = requests.get(word_api, headers={"X-Api-Key": KEY})
@@ -38,7 +43,7 @@ def random_word(isogram: bool = True, min: int = 4, max: int = 8) -> str:
 
 # get random quote
 def random_quote():
-    quote_api = "https://api.api-ninjas.com/v1/quotes"
+    quote_api = URL + "quotes"
     while True:
         response = requests.get(quote_api, headers={'X-Api-Key': KEY})
         if response.status_code == requests.codes.ok:
