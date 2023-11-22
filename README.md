@@ -4,7 +4,6 @@ This repository contains a number of coding tools for Woodson Science Olympiad e
 
 
 ## admin
-
 Administrative tools for running Woodson Science Olympiad
 
 ### conflict finder
@@ -19,8 +18,16 @@ Finds every single conflict for each event, marginally useful for coming up with
 ![python-versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11-limegreen)
 
 Reads and decrypts locally stored (!) email files for MySchoolBucks dues and obtains individual t-shirt preferences
-
 <br><br>
+
+
+## cryptography
+![version](https://img.shields.io/badge/release-v2.0.0-blue)
+![python-versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11-limegreen)
+
+
+
+
 
 
 ## arduino
@@ -30,8 +37,6 @@ Reads and decrypts locally stored (!) email files for MySchoolBucks dues and obt
 This folder contains code for events involving the Arduino platform. 
 
 ### Installation
-
-
 Compiling and uploading code requires using the Arduino IDE. For Windows 11 school laptops, go to `Software Center` and install `Arduino`. For personal laptops, visit [Arduino's Software Page](https://www.arduino.cc/en/software).
 
 
