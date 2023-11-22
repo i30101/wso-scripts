@@ -10,7 +10,7 @@ import pandas as pd
 
 # file data
 TEAMS = ["europa", "callisto", "io"]
-FILEPATH = "./conflict-finder/events/"
+FILEPATH = "./conflict-finder/"
 
 
 # names of all 2024 events
@@ -41,7 +41,7 @@ pairings = [
 
 
 # get initial data
-europa = pd.read_csv("./conflict-finder/events/europa.csv")
+europa = pd.read_csv("./conflict-finder/europa.csv")
 event_names = [event for event in europa.loc[:, "Event"]]
 
 
