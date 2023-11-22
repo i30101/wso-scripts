@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 1.0.0
+# Version: 1.0.1
 # Since: 4 November 2023
 # Finds who paid their MySchoolBucks dues
 
@@ -38,12 +38,17 @@ def read_email(filename: str) -> str:
     if "Science Olympiad Dues" in text:
         text = text[text.index("Science Olympiad Dues") :]
         text = text.replace("Science Olympiad Dues", "")
+        print(text)
+        text = text[: text.index("\\r\\n\\r\\n")]
+        name = text[: text.index("(")].replace(" ", "")
+        tshirt = text[text.index(": ") :]
+        text = name + tshirt
     else:
         text = text[text.index("Science Olympiad Donation") :]
         text = text.replace("Science Olympiad Donation", "")
+        text = text[: text.index("(")].replace(" ", "").replace(",", ", ")
 
     # trim trimmed trimmed text
-    text = text[: text.index("(")].replace(" ", "").replace(",", ", ")
 
     # return and continue writing excellent comments
     return text
