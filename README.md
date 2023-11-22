@@ -21,20 +21,20 @@ Getting the code on your computer:
 - Navigate to `Documents\Arduino` on your local drive
 - Create new a new folder `Robot`
 - Download `Robot.ino` from this reposity and copy to your new folder
-\
+<br>
 
 Adding the MakeBlock library:
 - Install the MakeBlock Drive library by installing this [zip](https://codeload.github.com/Makeblock-official/Makeblock-Libraries/zip/master) file
 - This code is also in the repository
 - Unzip file and copy to `Documents\Ardunio\libraries`
-\
+<br>
 
 Running your mBot:
 - Connect your robot to your computer via a USB-B cable
 - Select the right port/board and set it as an `Ardunio Uno`
 - Hit the arrow or "upload" button to flash code to the Arduino
 - If you installed the MakeBlock library, your mBot should be up and running
-\
+<br>
 
 
 ### Code Setup - Detector Building
