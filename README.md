@@ -1,7 +1,8 @@
 # woodsonscioly-scripts
 
 This repository contains a number of coding tools for Woodson Science Olympiad events and club management. Sensitive files have been hidden for security reasons. Reach out via LinkedIn if you have questions or concerns. 
-<br>
+
+<br><br>
 
 ## admin
 Administrative tools for running Woodson Science Olympiad
