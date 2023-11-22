@@ -1,6 +1,6 @@
 # woodsonscioly-scripts
 
-This repository contains a number of coding tools for Woodson Science Olympiad events and club management. Reach out if you have any questions or concerns. 
+This repository contains a number of coding tools for Woodson Science Olympiad events and club management. Sensitive files have been hidden for security concerns. Reach out via LinkedIn if you have questions or concerns. 
 
 
 ## admin
@@ -56,7 +56,7 @@ Hilli 3x3 and Nihilist are coming soon!
 This folder contains code for events involving the Arduino platform. 
 
 ### Installation
-Compiling and uploading code requires using the Arduino IDE. For Windows 11 school laptops, go to `Software Center` and install `Arduino`. For personal laptops, visit [Arduino's Software Page](https://www.arduino.cc/en/software).
+Compiling and uploading code requires using the Arduino IDE. For Windows 11 school laptops, go to `Software Center` and install `Arduino`. For personal laptops, visit [Arduino's Software Page](https://www.arduino.cc/en/software) and install the latest IDE.
 
 
 ### Code Setup - Robot Tour
@@ -69,7 +69,7 @@ Getting the code on your computer:
 Adding the MakeBlock library:
 - Install the MakeBlock Drive library by installing this [zip](https://codeload.github.com/Makeblock-official/Makeblock-Libraries/zip/master) file
 - This code is also in the repository
-- Unzip file and copy to `Documents\Ardunio\libraries`
+- Unzip file and copy entire file to `Documents\Ardunio\libraries`
 
 Running your mBot:
 - Connect your robot to your computer via a USB-B cable
