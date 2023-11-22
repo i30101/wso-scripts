@@ -12,7 +12,6 @@ Administrative tools for running Woodson Science Olympiad
 ![python-versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11-limegreen)
 
 Finds every single conflict for each event, marginally useful for coming up with training session schedule
-<br>
 
 
 ### dues analyzer
@@ -20,7 +19,8 @@ Finds every single conflict for each event, marginally useful for coming up with
 ![python-versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11-limegreen)
 
 Reads and decrypts locally stored (!) email files for MySchoolBucks dues and obtains individual t-shirt preferences
-<br>
+
+<br><br>
 
 
 ## arduino
