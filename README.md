@@ -69,7 +69,6 @@ Getting the code on your computer:
 
 Adding the MakeBlock library:
 - Install the MakeBlock Drive library by installing this [zip](https://codeload.github.com/Makeblock-official/Makeblock-Libraries/zip/master) file
-- This code is also in the repository
 - Unzip file and copy entire file to `Documents\Ardunio\libraries`
 
 Running your mBot:
@@ -77,7 +76,6 @@ Running your mBot:
 - Select the right port/board and your board to `Ardunio Uno`
 - Hit the arrow or "upload" button to flash code to the Arduino
 - If you installed the MakeBlock library, your mBot should be up and running
-<br>
 
 
 ### Code Setup - Detector Building

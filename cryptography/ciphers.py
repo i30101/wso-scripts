@@ -57,6 +57,7 @@ def remove_punctuation(plain: str, strip: bool = True) -> str:
     cleaned = plain
     for punc in PUNCTUATION:
         cleaned = cleaned.replace(punc, "")
+    plain = plain.replace("  ", " ")
     return cleaned
 
 
@@ -65,12 +66,11 @@ def to_morse(plain: str) -> str:
     plaintext = remove_punctuation(plain).upper()
     morse_text = ""
     for i, char in enumerate(plaintext):
-        if char == " ":
-            morse_text += "xx"
-        else:
+        if char != " ":
             morse_text += MORSE[char]
-            if i != len(plaintext) - 1:
-                morse_text += "x"
+        if i != len(plaintext) - 1:
+            morse_text += "x"
+    morse_text = morse_text.replace("xxx", "")
     return morse_text
 
 
@@ -94,14 +94,13 @@ def fractionated(plain: str, author: str):
     cipher_text = ""
     for i in range(0, len(morse_text), 3):
         triplet = morse_text[i: i + 3]
-        # print(triplet)
         letter = cipher_alphabet[FRACTIONATED.index(triplet)]
         cipher_text += letter
 
     # print question
-    print(f"Solve this Fractionated Morse cipher by {author} that ends with the word {plain[plain.rindex(' '):].upper()}\n")
+    print(f"Solve this Fractionated Morse cipher by {author} that ends with the word{plain[plain.rindex(' '):].upper()}")
     print("  ".join(cipher_text))
-
+    print()
 
 
 # complete columnar transposition cipehr
@@ -275,4 +274,4 @@ def nihilist(plain: str, author: str):
 if __name__ == "__main__":
     for i in range(16):
         quote = random_quote()
-        fractionated(quote["quote"], quote["author"])
+        porta(quote["quote"], quote["author"])
