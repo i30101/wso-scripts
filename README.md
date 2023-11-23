@@ -39,7 +39,7 @@ OP Codebusters cipher generation tool able to create test questions for the foll
 - Porta
 - Hill 2x2
 
-Hilli 3x3 and Nihilist are coming soon!
+Hill 3x3 and Nihilist are coming soon!
 
 
 ### Depencencies
