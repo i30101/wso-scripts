@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 2.1.3
+# Version: 2.2.0
 # Since: 25 October 2023
 # Encryption and decryption
 

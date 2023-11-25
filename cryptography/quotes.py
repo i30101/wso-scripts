@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 2.0.1
+# Version: 2.2.0
 # Since: 25 October 2023
 # Quote generation tools
 
