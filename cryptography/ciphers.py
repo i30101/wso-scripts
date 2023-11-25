@@ -76,10 +76,23 @@ def to_morse(plain: str) -> str:
 
 
 # fractionated morse cipher
-def fractionated(plain: str, author: str):
-    # translate plaintext to morse
-    morse_text = to_morse(plain)
+def fractionated(i: int = 1, plain: str = None, auth: str = None):
+    if i == 0:
+        return
+    
+    plaintext = plain
+    morse_text = None
+    author = None
 
+    # cipher and author not given
+    if plain is None and auth is None:
+        plaintext, author = random_quote()
+        morse_text = to_morse(plaintext)
+    # quote info given
+    else:
+        morse_text = to_morse(plain)
+        author = auth
+    
     # adjust length for transcription
     if int(len(morse_text)) % 3 != 0:
         morse_text += "".join(["x" for i in range(3 - (len(morse_text) % 3))])
@@ -92,34 +105,35 @@ def fractionated(plain: str, author: str):
 
     # encryption
     cipher_text = ""
-    for i in range(0, len(morse_text), 3):
-        triplet = morse_text[i: i + 3]
+    for j in range(0, len(morse_text), 3):
+        triplet = morse_text[j: j + 3]
         letter = cipher_alphabet[FRACTIONATED.index(triplet)]
         cipher_text += letter
 
     # print question
-    print(f"Solve this Fractionated Morse cipher by {author} that ends with the word{plain[plain.rindex(' '):].upper()}")
-    print("  ".join(cipher_text))
-    print()
+    print(f"Solve this Fractionated Morse cipher by {author} that ends with the word{plaintext[plaintext.rindex(' '):].upper()}")
+    print("  ".join(cipher_text) + "\n")
+    
+    fractionated(i - 1)
 
 
 # complete columnar transposition cipehr
-def columnar():
-    new_quote = random_quote()
-    quote = ""
-    author = ""
+def columnar(i: int = 1):
+    if i == 0:
+        return
+
+    quote, author = random_quote()
     num_columns = 0
 
     # find a complete quote
     griddable = False
     while not griddable:
-        new_quote = random_quote()
-        quote = get_letters(new_quote["quote"])
-        author = new_quote["author"]
+        quote, author = random_quote()
+        quote = get_letters(quote)
 
         available_columns = list(range(4, 10))
 
-        for i in range(len(available_columns)):
+        for j in range(len(available_columns)):
             rand_column = random.choice(available_columns)
             if len(quote) % rand_column == 0:
                 num_columns = rand_column
@@ -129,22 +143,36 @@ def columnar():
 
     # put letters in columns
     columns = ["" for i in range(num_columns)]
-    for i in range(len(quote)):
-        columns[i % num_columns] += quote[i]
+    for j in range(len(quote)):
+        columns[j % num_columns] += quote[j]
 
     # shuffle columns
     random.shuffle(columns)
 
     print(f"Solve this Complete Columnar Transposition cipher by {author}.")
-    print("".join(columns))
+    print("".join(columns) + "\n")
+
+    columnar(i - 1)
 
 
 
 # incompelte columnar transposition cipher
 # some columns are incomplete, imperfect grid of letters
-def columnar_key(plain: str, author: str):
-    plaintext = get_letters(plain)
-    # print(plaintext)
+def columnar_key(i: int = 1, plain: str = None, auth: str = None):
+    if i == 0:
+        return
+    
+    plaintext = None
+    author = None
+
+    # cipher and author not given
+    if plain is None and auth is None:
+        plaintext, author = random_quote()
+        plaintext = get_letters(plaintext)
+    # quote info given
+    else:
+        plaintext = get_letters(plain)
+        author = auth
 
     # get keyword
     keyword = random_word(False).upper()
@@ -154,8 +182,8 @@ def columnar_key(plain: str, author: str):
     columns = [[] for i in range(num_letters)]
 
     # store column for each letter
-    for i, letter in enumerate(plaintext):
-        columns[i % num_letters].append(letter)
+    for j, letter in enumerate(plaintext):
+        columns[j % num_letters].append(letter)
 
     # lists for adding columns to ciphertext in order :clown:
     num_list = [ALPHABET.index(letter) for letter in keyword]
@@ -166,7 +194,7 @@ def columnar_key(plain: str, author: str):
 
     # add each column to ciphertext in proper order
     # NOTE do not use i to reference any avlues in lists
-    for i in range(num_letters):
+    for j in range(num_letters):
         lowest_letter_num = min(num_list)
         lowest_letter_index = index_list[num_list.index(lowest_letter_num)]
 
@@ -176,13 +204,27 @@ def columnar_key(plain: str, author: str):
         index_list.remove(lowest_letter_index)
 
     print(f"Solve this Complete Columnar Transposition cipher by {author} with the keyword {keyword}.")
-    print(ciphertext)
+    print(ciphertext + "\n")
+    columnar_key(i - 1)
 
 
 
 # porta cipher
-def porta(plain: str, author: str):
-    plaintext = get_letters(plain)
+def porta(i: int = 1, plain: str = None, auth: str = None):
+    if i == 0:
+        return
+    
+    plaintext = None
+    author = None
+
+    # cipher and author not given
+    if plain is None and auth is None:
+        plaintext, author = random_quote()
+        plaintext = get_letters(plaintext)
+    # quote info given
+    else:
+        plaintext = get_letters(plain)
+        author = auth
 
     # get keyword
     keyword = random_word(False).upper()
@@ -195,8 +237,8 @@ def porta(plain: str, author: str):
     
     # encryption
     ciphertext = ""
-    for i, plainLetter in enumerate(plaintext):
-        row_index = int(ALPHABET.index(keyword[i % len(keyword)]) / 2)
+    for j, plainLetter in enumerate(plaintext):
+        row_index = int(ALPHABET.index(keyword[j % len(keyword)]) / 2)
         if plainLetter in first_half:
             ciphertext += rows[row_index][first_half.index(plainLetter)]
         else:
@@ -204,7 +246,9 @@ def porta(plain: str, author: str):
     
     # print question
     print(f"Solve this Porta cipher by {author} with the keyword {keyword}.")
-    print(ciphertext)
+    print(ciphertext + "\n")
+    
+    porta(i - 1)
 
 
 
@@ -225,8 +269,21 @@ def is_invertible(key: list) -> bool:
 
 
 # 2x2 hill cipher
-def hill(plain: str, author: str, k: str = None, decryption: bool = True):
-    plaintext = get_letters(plain)
+def hill(i: int = 1, plain: str = None, auth: str = None, k: str = None, decryption: bool = True):
+    if i == 0:
+        return
+    
+    plaintext = None
+    author = None
+
+    # cipher and author not given
+    if plain is None and auth is None:
+        plaintext, author = random_quote()
+        plaintext = get_letters(plaintext)
+    # quote info given
+    else:
+        plaintext = get_letters(plain)
+        author = auth
 
     # generate key if key not already given
     key = hill_key()
@@ -254,24 +311,25 @@ def hill(plain: str, author: str, k: str = None, decryption: bool = True):
 
     # print question
     print(f"Decode this Hill Cipher by {author} with the encryption key {key_text}")
-    print("".join([ALPHABET[number % 26] for number in cipher_numbers]))
+    print("".join([ALPHABET[number % 26] for number in cipher_numbers]) + "\n")
+
+    hill(i - 1, decryption=bool)
    
 
 
 # 3x3 hill cipher
-def hill3(plain: str, author: str):
+def hill3(i: int = 1, plain: str = None, author: str = None):
     pass
 
 
 
 # nihilist cipher
-def nihilist(plain: str, author: str):
+def nihilist(i: int = 1, plain: str = None, author: str = None):
     pass
 
 
 
 
 if __name__ == "__main__":
-    for i in range(16):
-        quote = random_quote()
-        porta(quote["quote"], quote["author"])
+    fractionated(2)
+

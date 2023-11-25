@@ -6,7 +6,6 @@
 
 # import external libraries
 import requests
-import ast
 
 
 # read API key
@@ -42,12 +41,12 @@ def random_word(isogram: bool = True, min: int = 4, max: int = 8) -> str:
 
 
 # get random quote
-def random_quote():
+def random_quote() -> tuple:
     quote_api = URL + "quotes"
     while True:
         response = requests.get(quote_api, headers={'X-Api-Key': KEY})
         if response.status_code == requests.codes.ok:
-            quote_dict = ast.literal_eval(response.text.replace("[", "").replace("]", ""))
+            quote_dict = eval(response.text.replace("[", "").replace("]", ""))
             quote = quote_dict["quote"]
             if (
                 quote.count(".") < 2 and    # less than two sentences
@@ -56,6 +55,6 @@ def random_quote():
                 not any(char.isdigit() for char in quote)   # quote does not have numbers
 
             ):
-                return quote_dict
+                return quote, quote_dict["author"]
         else:
             print("Error: ", response.status_code, response.text)
