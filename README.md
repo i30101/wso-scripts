@@ -29,7 +29,7 @@ Reads and decrypts locally stored (!) email files for MySchoolBucks dues and obt
 
 
 ## cryptography
-![version](https://img.shields.io/badge/release-v2.2.0-blue)
+![version](https://img.shields.io/badge/release-v3.0.0-blue)
 ![python-versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11-limegreen)
 
 OP Codebusters cipher generation tool able to create test questions for the following ciphers: 

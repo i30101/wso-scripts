@@ -41,7 +41,7 @@ def random_word(isogram: bool = True, min: int = 4, max: int = 8) -> str:
 
 
 # get random quote
-def random_quote() -> tuple:
+def random_quote(max_length: int = 100) -> tuple:
     quote_api = URL + "quotes"
     while True:
         response = requests.get(quote_api, headers={'X-Api-Key': KEY})
@@ -49,9 +49,9 @@ def random_quote() -> tuple:
             quote_dict = eval(response.text.replace("[", "").replace("]", ""))
             quote = quote_dict["quote"]
             if (
-                quote.count(".") < 2 and    # less than two sentences
-                quote.count(",") < 4 and    # less than four commas
-                len(quote) < 100 and        # less than 100 characters
+                quote.count(".") < 2 and        # less than two sentences
+                quote.count(",") < 4 and        # less than four commas
+                len(quote) < max_length and     # less than 100 characters
                 not any(char.isdigit() for char in quote)   # quote does not have numbers
 
             ):
