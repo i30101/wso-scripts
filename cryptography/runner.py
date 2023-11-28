@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# version: 3.0.0
+# version: 3.0.1
 # Since: 25 November 2023
 # Runner class for Codebusters ciphers
 
@@ -17,9 +17,4 @@ from porta import porta
 
 
 # CALL CIPHERS HERE
-columnar()
-columnar_key()
-fractionated()
-hill()
-hill_3()
-porta()
+hill_3(2)

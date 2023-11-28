@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 3.0.0
+# Version: 3.0.1
 # Since: 27 November 2023
 # Hill Cipher Encryption
 # NOTE fix 3x3 encryption
@@ -19,6 +19,7 @@ from itertools import chain
 
 # values coprime with 26 for Hill Cipher
 COPRIME_26 = [1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25]
+COPRIME_INV = [1, 9, 21, 15, 3, 19, 7, 23, 11, 5, 17, 25]
 
 
 
@@ -85,14 +86,12 @@ def hill_3(i: int = 1, plain: str = None, auth: str = None, k: list = None):
     if i == 0:
         return
     
-    plaintext, author = None, None
+    plaintext = None
 
     if plain is None and auth is None and k is None:
-        plaintext, author = quotes.random_quote(30)
-        plaintext = tools.get_letters(plaintext)
+        plaintext = tools.get_letters("".join([quotes.random_word() for i in range(3)]))
     else:
         plaintext = tools.get_letters(plain)
-        author = auth
 
     # adjust size of plaintext
     remainder = len(plaintext) % 3
@@ -104,21 +103,24 @@ def hill_3(i: int = 1, plain: str = None, auth: str = None, k: list = None):
     for j in range(0, len(plaintext) - 1, 3):
         triplets.append([tools.ALPHABET.index(plaintext[j]), tools.ALPHABET.index(plaintext[j + 1]), tools.ALPHABET.index(plaintext[j + 2])])
 
-    # get key
-    # key, determinant = hill_3_key()
-    key = [
-        [0, 11, 15],
-        [7, 0, 1],
-        [4, 19, 0]
-    ]
-    determinant = round(np.linalg.det(key)) % 26
-    print(key)
-    adjoint = np.mod(np.linalg.inv(key) * determinant, 26)
-    decryption_key = COPRIME_26[- COPRIME_26.index(determinant)] * adjoint
+    key, determinant = hill_3_key()
+
+    # calculate inverse determinant from determinant
+    inverse_determinant = COPRIME_INV[COPRIME_26.index(determinant)]
+
+    # calculate adjoint matrix
+    adjoint = np.zeros_like(key)
+    for m in range(3):
+        for n in range(3):
+            sub_matrix = np.delete(np.delete(key, m, axis=0), n, axis=1)
+            adjoint[n, m] = (-1) ** (m + n) * round(np.linalg.det(sub_matrix))
+    adjoint = np.mod(adjoint, 26)
+
+    # calculate decryption 
+    decryption_key = np.mod(inverse_determinant * adjoint, 26)
     
     # flatten decryption key
-    decryption_numbers = np.mod(list(chain.from_iterable(decryption_key)), 26)
-    print(decryption_numbers)
+    decryption_numbers = list(chain.from_iterable(decryption_key))
 
     # encrypt plaintext
     encrypted_triplets = []
@@ -128,12 +130,12 @@ def hill_3(i: int = 1, plain: str = None, auth: str = None, k: list = None):
     # flatten encrypted numbers
     cipher_numbers = list(chain.from_iterable(encrypted_triplets))
 
-
     # print question
-    print(f"Decode this Hill Cipher by {author} with the decryption key {''.join([tools.ALPHABET[int(number)] for number in decryption_numbers])}")
+    print(f"Decode these three words encoded with the Cipher usign the decryption key {''.join([tools.ALPHABET[number] for number in decryption_numbers])}")
     print("".join([tools.ALPHABET[number % 26] for number in cipher_numbers]) + "\n")
     
     hill_3(i - 1)
+
 
 
 # generates decryptible hill 3x3 key
@@ -143,6 +145,6 @@ def hill_3_key():
     determinant = 0
     while determinant not in COPRIME_26:
         key = rand_key()
-        determinant = np.linalg.det(key)
+        determinant = round(np.linalg.det(key)) % 26
     return key, determinant
 
