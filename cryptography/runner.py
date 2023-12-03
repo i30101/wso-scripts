@@ -17,4 +17,4 @@ from porta import porta
 
 
 # CALL CIPHERS HERE
-nihilist(10, plain="hellothisisatest", auth="andrew")
+nihilist(3)

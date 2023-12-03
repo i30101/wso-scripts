@@ -38,8 +38,8 @@ OP Codebusters cipher generation tool able to create test questions for the foll
 - Columnar Transportation
 - Porta
 - Hill 2x2
-
-Hill 3x3 and Nihilist are coming soon!
+- Hill 3x3
+- Nihilist
 
 
 ### Depencencies
