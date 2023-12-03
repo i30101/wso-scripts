@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 3.0.0
+# Version: 3.1.0
 # Since: 25 November 2023
 # Fractionated Morse Cipher Encryption
 

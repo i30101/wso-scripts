@@ -3,15 +3,30 @@
  * @version 1.0.0
  * @date 9 November 2023
  * @brief MakeBlock mBot driver for Robot Tour
+ * 
+ * WOODSON SCIENCE OLYMPIAD CALLISTO + IO ROBOT TOUR DRIVER
+ * How the code works:
+ * 1. You type out the following in setup:
+ *    a. The target time given by the event supervisor
+ *    b. The path of the robot 
+ * 2. The code optimizes the speed and travel times of the robot
+ * 
+ *
+ * 
+ * How the robot works:
+ * 1. The robot can only move forwards or backwards in 25cm intervals (half of a grid box)
+ * 2. The robot can turn right, left, or do a u-turn
+ * 3. Start the robot by pressing on the small black button on the top of the board
  */
+
+
 
 #include "MeOrion.h"
 
 MeDCMotor leftMotor(M1);
 MeDCMotor rightMotor(M2);
 
-// speed of the robot, between -255 and 255
-uint8_t speed = 250;
+
 
 // whether the robot should wait after each action
 bool wait = true;
@@ -21,6 +36,36 @@ int waitTime = 500;
 
 // time a motor should be run to turn 90 degrees
 int turnTime = 1000;
+
+
+/**
+ * TARGET TIME GIVEN BY EVENT SUPERVISOR
+ * @note unit is seconds
+ */
+int time = 0;
+
+
+/**
+ * SPEED AT WHICH ROBOT SHOULD RUN TO MATCH GIVEN TIME
+ * @note should be an int
+ * @note range is -255 to 255
+ */
+uint8_t speed = 250;
+
+
+/**
+ *
+ */
+float runTime = 0;
+
+
+/**
+ * 
+ */
+void setSpeed() {
+  // placeholder value
+  speed = 255;
+}
 
 
 /**
@@ -64,6 +109,17 @@ void backward(double meters) {
   if(wait) {
     delay(waitTime);
   }
+}
+
+
+/**
+ * Slows the robot down before stopping to turn
+ * Intended for greater precision of movement
+ * @pre speeds of motors are negative of the other
+*/
+void slowDown() {
+  uint8_t tempSpeed = speed;
+  
 }
 
 

@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 3.0.0
+# Version: 3.1.0
 # Since: 25 October 2023
 # String manipulation tools
 
@@ -18,8 +18,8 @@ def to_numbers(plain: str) -> list:
 
 
 # removes all puncutation and spaces (leaves only letters)
-def get_letters(plain: str) -> str:
-    return [letter for letter in plain.upper() if letter in ALPHABET]
+def get_letters(plain: str) -> list:
+    return [letter for letter in list(plain.upper()) if letter in ALPHABET]
 
 
 # removes punctuation

@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 2.2.0
+# Version: 3.1.0
 # Since: 25 October 2023
 # Quote generation tools
 
@@ -48,7 +48,6 @@ def random_quote(max_length: int = 100) -> tuple:
         if response.status_code == requests.codes.ok:
             quote_dict = eval(response.text.replace("[", "").replace("]", ""))
             quote = quote_dict["quote"]
-            print(len(quote), quote)
             if (
                 quote.count(".") < 2 and        # less than two sentences
                 quote.count(",") < 4 and        # less than four commas

@@ -1,5 +1,5 @@
 # Author: Andrew Kim
-# Version: 3.0.0
+# Version: 3.1.0
 # Since: 27 November 2023
 # Columnar Cipher encryption
 
@@ -13,8 +13,7 @@ import quotes
 import random
 
 
-
-# complete columnar transposition cipehr
+# complete columnar transposition cipher
 def columnar(i: int = 1):
     if i == 0:
         return

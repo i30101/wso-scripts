@@ -1,8 +1,7 @@
 # Author: Andrew Kim
-# Version: 3.0.1
+# Version: 3.1.0
 # Since: 27 November 2023
 # Hill Cipher Encryption
-# NOTE fix 3x3 encryption
 
 
 # import local libraries
@@ -14,7 +13,6 @@ import quotes
 import random
 import numpy as np
 from itertools import chain
-
 
 
 # values coprime with 26 for Hill Cipher
@@ -131,7 +129,7 @@ def hill_3(i: int = 1, plain: str = None, auth: str = None, k: list = None):
     cipher_numbers = list(chain.from_iterable(encrypted_triplets))
 
     # print question
-    print(f"Decode these three words encoded with the Cipher usign the decryption key {''.join([tools.ALPHABET[number] for number in decryption_numbers])}")
+    print(f"Decode these three words encoded with the Cipher using the decryption key {''.join([tools.ALPHABET[number] for number in decryption_numbers])}")
     print("".join([tools.ALPHABET[number % 26] for number in cipher_numbers]) + "\n")
     
     hill_3(i - 1)
