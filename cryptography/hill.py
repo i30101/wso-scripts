@@ -145,4 +145,3 @@ def hill_3_key():
         key = rand_key()
         determinant = round(np.linalg.det(key)) % 26
     return key, determinant
-

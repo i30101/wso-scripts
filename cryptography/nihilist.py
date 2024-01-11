@@ -9,36 +9,21 @@ import tools
 import quotes
 
 
-# import external libraries
-import random
-
-
-# letters that can be removed from polybius table
-remove_letters = "JVWKQZ"
-
-
 # finds polybius value for given coordinates
 def polybius_num(l: str, table: list) -> int:
     row = 0
     col = 0
     for r in range(5):
         for c in range(5):
-            if table[r][c] == l:
+            if l in table[r][c]:
                 row = r
                 col = c
     return 10 * (row + 1) + col + 1
 
 
-# finds polybius letter for given numbers
-def polybius_letters(n: int, table: list) -> str:
-    row = int(n / 5) - 1
-    col = n % 5
-    return table[row][col]
-
-
-# encrypts plaintext using Nihilist Cipher
-def nihilist(i: int = 1, plain: str = None, auth: str = None, k: str = None):
-    if i == 0: 
+# encrypts plaintext using the Nihilist Cipher
+def nihilist(i: int = 1, plain: str = None, auth: str = None, k: str = None, polyb: str = None):
+    if i == 0:
         return
     
     plaintext, author = None, None
@@ -51,37 +36,35 @@ def nihilist(i: int = 1, plain: str = None, auth: str = None, k: str = None):
     else:
         plaintext = tools.get_letters(plain)
         author = auth
-    
 
     # generate keywords
-    keyword = quotes.random_word().upper()
-    polybius_letters = quotes.random_word().upper()
-
-    # turn polybius key into isogram
-    polybius_key = "".join([char for j, char in enumerate(polybius_letters) if char not in polybius_letters[:j]])
-
-    # pick letter to be removed from polybius table
-    removables = list(remove_letters)
-    removed_letter = random.choice(removables)
-    while remove_letters in plaintext and polybius_key:
-        removables.remove(removed_letter)
-        removed_letter = random.choice(removables)
+    keyword = quotes.random_word().upper() if k is None else k.upper()
+    polyb_key = quotes.random_word().upper() if polyb is None else polyb.upper()
 
     # create polybius table
-    polybius_alph = polybius_key + "".join([letter for letter in tools.ALPHABET if letter != removed_letter and letter not in polybius_key])
-    print(f"length of polybius alphabet: {len(polybius_alph)}")
-    if len(polybius_alph) > 25:
-        print(polybius_alph)
+    i_index = tools.ALPHABET.index("I")
+    split_alph = list(tools.ALPHABET[: i_index]) + ["IJ"] + list(tools.ALPHABET[i_index + 2 :])
+    
+    # check if I and J are both in the letter
+    if "I" in polyb_key and "J" in polyb_key:
+        raise Exception("Polybius key cannot be entered into grid.")
+    
+    polybius_alph = []
+    for letter in polyb_key:
+        if letter == "I" or letter == "J":
+            polybius_alph.append("IJ")
+        else:
+            polybius_alph.append(letter)
+
+    polybius_alph += [letter for letter in split_alph if letter not in polybius_alph]
+
     polybius = [list(range(5)) for j in range(5)]
     for j, letter in enumerate(polybius_alph):
         polybius[int(j / 5)][j % 5] = letter
     
+    # encrypt cipher
     cipher_numbers = []
     for j, letter in enumerate(plaintext):
         cipher_numbers.append(str(polybius_num(keyword[j % len(keyword)], polybius) + polybius_num(letter, polybius)))
-
-    # print question
-    print(f"Solve this Nihilist cipher by {author} with the keyword {keyword} and the Polybius keyword {polybius_letters}.")
+    print(f"Solve this Nihilist cipher by {author} with the keyword {keyword} and the Polybius key {polyb_key}.")
     print(" ".join(cipher_numbers) + "\n")
-
-    nihilist(i - 1)

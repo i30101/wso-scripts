@@ -83,5 +83,3 @@ def fractionated(i: int = 1, plain: str = None, auth: str = None):
     print("  ".join(cipher_text) + "\n")
     
     fractionated(i - 1)
-
-

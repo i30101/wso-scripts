@@ -12,9 +12,12 @@ from hill import hill
 from hill import hill_3
 from nihilist import nihilist
 from porta import porta
+import quotes
 
-
+def andrew():
+    columnar(3)
+    fractionated(3)
+    nihilist(3)
 
 
 # CALL CIPHERS HERE
-nihilist(3)

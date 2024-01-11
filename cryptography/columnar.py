@@ -51,6 +51,41 @@ def columnar(i: int = 1):
     columnar(i - 1)
 
 
+# new columnar transposition cipher
+def new_columnar():
+    quote, author = quotes.random_quote()
+    quote = tools.remove_punctuation(quote).upper()
+    
+    words = quote.split(" ")
+    crib = random.choice([word for word in words if len(word) > 5])
+
+    print(words)
+    print(crib)
+
+    # choose number of columns
+    max_columns = 9 if len(crib) > 8 else len(crib) + 1
+    num_columns = random.randint(4, max_columns)
+
+    # adjust ciphertext 
+    quote = tools.get_letters(quote)
+    remainder = len(quote) % num_columns
+    if remainder != 0:
+        quote += "X" * (num_columns - remainder)
+
+    print(quote)
+
+    # put letters in columns
+    columns = ["" for i in range(num_columns)]
+    for j in range(len(quote)):
+        columns[j % num_columns] += quote[j]
+
+    # shuffle columns
+    random.shuffle(columns)
+
+    
+
+
+
 
 # incompelte columnar transposition cipher
 # some columns are incomplete, imperfect grid of letters
@@ -101,3 +136,6 @@ def columnar_key(i: int = 1, plain: str = None, auth: str = None):
     print(f"Solve this Complete Columnar Transposition cipher by {author} with the keyword {keyword}.")
     print(ciphertext + "\n")
     columnar_key(i - 1)
+
+
+new_columnar()
