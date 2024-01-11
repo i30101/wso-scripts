@@ -2,6 +2,7 @@
 # version: 3.1.0
 # Since: 25 November 2023
 # Runner class for Codebusters ciphers
+# NOTE deprecated, remove soon
 
 
 # import ciphers
