@@ -80,6 +80,5 @@ Running your mBot:
 
 ### Code Setup - Detector Building
 
-Coming soon!
-
+For Brian and Lucas
 
