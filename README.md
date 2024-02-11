@@ -80,5 +80,5 @@ Running your mBot:
 
 ### Code Setup - Detector Building
 
-For Brian and Lucas
+Ignore the LiquidCrystal library if you are 
 

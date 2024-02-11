@@ -1,0 +1,57 @@
+number,school,team,exhibition,city,state,track,rank,total,Air Trajectory,Anatomy and Physiology,Astronomy,Chemistry Lab,Codebusters,Detector Building,Disease Detectives,Dynamic Planet,Ecology,Experimental Design,Fermi Questions,Forensics,Forestry,Fossils,Geologic Mapping,Microbe Mission,Optics,Robot Tour,Scrambler,Tower,Wind Power,Write It Do It
+35,Langley High School,Green,,McLean,VA,,1,151,31,11,1,2,1,4,4,2,26,1,11,1,5,1,4,5,17,10,1,1,6,6
+61,W.T. Woodson High School,A,,Fairfax,VA,,2,197,1,3,3,35,2,3,1,6,12,14,24,14,3,4,11,7,10,11,10,3,18,2
+36,Langley High School,Gold,,McLean,VA,,3,203,11,2,25,3,14,5,2,7,18,6,2,6,16,11,14,12,1,18,16,2,5,7
+15,Lake Braddock Secondary School,Gold,,Burke,VA,,4,231,13,6,26,4,5,13,9,19,1,2,7,12,2,3,2,6,23,1,15,18,7,37
+8,Reservoir High School,B,,Fulton,MD,,5,297,23,4,31,6,6,7,6,4,6,5,31,15,26,33,27,1,3,4,7,31,17,4
+1,James W. Robinson Jr. Secondary School,A,,Fairfax,VA,,6,315,2,29,12,20,15,2,28,1,35,9,12,16,10,8,3,18,24,20,2,28,11,10
+22,Atholton High School,A,,Columbia,MD,,7,351,32,12,16,22,10,20,10,13,4,8,34,5,8,30,6,8,15,57,5,30,1,5
+46,Walter Johnson High School,,,Bethesda,MD,,8,365,22,7,10,5,21,10,25,18,33,20,4,11,11,9,10,21,36,24,24,14,9,21
+50,Oakton High School,A,,Vienna,VA,,9,369,18,21,5,36,20,25,3,5,3,7,9,39,1,6,1,13,26,25,4,43,33,26
+18,"BASIS Independent Washington, D.C.",A,,Washington,DC,,10,381,57,31,9,14,7,6,5,26,14,15,36,35,6,7,16,2,15,14,26,35,4,1
+62,W.T. Woodson High School,B,,Fairfax,VA,,11,414,6,8,2,8,13,22,23,12,22,10,14,9,28,37,19,17,35,22,29,7,28,43
+41,Centreville High School,A,,Clifton,VA,,12,431,26,17,36,1,8,11,13,14,19,17,30,7,27,14,20,10,2,57,28,10,32,32
+67,Potomac Falls High School,A,,Sterling,VA,,13,433,8,41,23,13,12,16,12,16,17,4,17,2,38,48,18,20,27,21,12,38,3,27
+7,Reservoir High School,A,,Fulton,MD,,14,449,16,1,4,42,3,17,32,21,41,12,13,8,44,27,37,4,6,57,11,15,15,23
+64,James Madison High School,A,,Vienna,VA,,15,449,3,33,14,12,34,57,15,10,25,16,3,19,7,10,21,9,34,57,14,4,34,18
+11,Westfield High School,A,,Chantilly,VA,,16,456,14,13,6,39,26,18,7,27,7,3,37,20,4,25,30,33,33,5,30,11,29,39
+43,Chantilly High School,A,,Chantilly,VA,,17,504,12,20,57,21,9,57,14,24,27,21,16,17,13,13,5,57,11,57,9,9,10,25
+34,South County High School,C,,Lorton,VA,,18,590,24,35,20,33,22,14,27,9,37,22,10,29,31,34,57,24,32,2,57,12,42,17
+4,Meridian High School,A,,Falls Church,VA,,19,601,21,23,32,23,40,9,34,45,10,57,8,10,12,43,12,23,43,26,57,17,20,36
+17,Lake Braddock Secondary School,White,,Burke,VA,,20,609,57,28,29,18,32,57,21,41,30,57,25,31,18,12,25,57,8,6,8,13,24,12
+42,Centreville High School,B,,Clifton,VA,,21,615,57,15,13,11,23,15,26,15,40,30,22,42,20,28,29,19,37,12,21,57,39,44
+55,Riverside High School,,,Leesburg,VA,,22,624,5,36,28,38,18,57,17,32,32,25,6,46,35,40,39,16,28,9,17,26,41,33
+2,James W. Robinson Jr. Secondary School,B,,Fairfax,VA,,23,625,34,44,42,30,46,12,44,17,20,13,23,43,30,23,41,27,30,23,13,29,21,20
+16,Lake Braddock Secondary School,Purple,,Burke,VA,,24,629,57,24,18,9,26,57,43,3,23,31,32,4,19,16,26,57,44,13,57,25,30,15
+29,George C. Marshall High School,A,,Falls Church,VA,,25,632,57,5,11,57,4,57,18,31,57,27,5,26,29,18,57,14,5,3,57,57,13,24
+48,Maret School,A,,Washington,DC,,26,640,57,30,33,16,34,1,41,25,38,58,1,30,34,36,7,31,4,57,23,27,12,45
+32,South County High School,A,,Lorton,VA,,27,650,20,42,40,24,31,28,35,35,28,23,42,28,15,20,31,28,12,27,57,6,36,42
+12,Westfield High School,B,,Chantilly,VA,,28,686,57,38,35,40,47,19,37,44,11,19,41,25,25,22,24,11,20,57,25,16,27,46
+3,James W. Robinson Jr. Secondary School,C,,Fairfax,VA,,29,701,17,51,30,34,45,8,48,29,16,33,27,32,17,39,40,35,39,57,20,37,19,28
+33,South County High School,B,,Lorton,VA,,30,708,33,40,19,37,16,23,42,23,36,24,38,23,33,38,32,22,21,57,57,20,40,34
+45,Chantilly High School,C,,Chantilly,VA,,31,710,15,22,43,10,26,57,57,37,43,57,26,21,40,26,35,57,25,15,3,36,2,57
+66,BASIS Independent McLean,A,,McLean,VA,,32,719,57,9,57,57,11,57,36,57,57,18,57,3,57,5,13,3,57,7,6,57,8,30
+9,Flint Hill School,Green,,Oakton,VA,,33,742,19,46,38,19,26,57,16,28,34,57,18,38,32,32,23,26,18,57,57,33,57,11
+21,West Springfield High School,B,,West Springfield,VA,,34,748,57,43,15,7,19,57,8,30,21,57,21,44,24,35,57,57,57,17,57,5,22,38
+57,Independence High School,A,,Ashburn,VA,,35,759,27,34,17,57,39,57,24,34,5,57,39,36,41,45,17,57,7,57,22,24,16,47
+20,West Springfield High School,A,,West Springfield,VA,,36,766,28,47,7,15,24,57,30,57,44,57,45,41,21,24,33,57,22,57,18,39,35,8
+58,Independence High School,B,,Ashburn,VA,,37,767,4,39,21,57,26,57,38,8,42,57,33,13,36,21,57,57,30,57,26,22,57,9
+44,Chantilly High School,B,,Chantilly,VA,,38,793,57,14,27,31,17,57,19,11,46,57,19,40,22,42,34,57,57,57,30,23,57,19
+65,James Madison High School,B,,Vienna,VA,,39,801,57,37,8,57,40,57,29,36,24,29,28,22,48,41,38,34,40,57,57,8,25,29
+6,Meridian High School,C,,Falls Church,VA,,40,807,7,49,57,29,57,57,57,22,2,26,40,57,39,2,15,57,57,28,57,19,57,16
+54,Thomas A. Edison High School,,,Alexandria,VA,,41,811,30,45,39,41,42,57,40,33,13,28,35,18,47,17,8,30,38,57,57,57,38,41
+23,Atholton High School,B,,Columbia,MD,,42,851,57,16,34,17,42,57,20,46,9,57,57,57,9,29,42,15,57,57,57,57,37,22
+59,Independence High School,C,,Ashburn,VA,,43,867,9,32,24,32,34,57,57,57,39,57,57,37,45,46,28,57,29,8,57,34,14,57
+30,George C. Marshall High School,B,,Falls Church,VA,,44,881,57,27,45,57,34,26,22,57,29,11,57,24,57,19,57,29,57,57,57,32,57,13
+49,Maret School,B,,Washington,DC,,45,889,57,18,44,27,57,57,31,20,8,57,20,57,14,57,57,57,9,57,57,57,57,14
+40,Alexandria City High School,B,,Alexandria,VA,,46,901,57,57,57,57,34,27,33,42,57,57,15,57,42,49,57,32,40,16,32,21,31,31
+68,Potomac Falls High School,B,,Sterling,VA,,47,964,57,57,22,57,25,57,57,39,15,57,57,34,46,57,9,57,13,57,57,42,57,35
+69,BASIS Independent McLean,B,,McLean,VA,,48,980,57,10,57,57,57,57,11,57,57,57,29,57,43,15,57,57,14,57,57,57,57,3
+5,Meridian High School,B,,Falls Church,VA,,49,1013,29,50,37,25,33,24,45,57,57,57,44,57,57,57,57,57,57,57,19,57,23,57
+19,"BASIS Independent Washington, D.C.",B,,Washington,DC,,50,1015,57,26,57,57,57,21,57,57,45,57,57,27,23,31,57,25,57,19,57,57,57,57
+10,Flint Hill School,Blue,,Oakton,VA,,51,1035,57,19,46,26,48,57,47,38,57,57,57,45,57,44,36,57,19,57,57,40,57,57
+39,Alexandria City High School,A,,Alexandria,VA,,52,1041,25,25,41,57,57,57,57,43,47,32,43,33,37,47,57,57,57,57,57,41,57,57
+60,Independence High School,D,,Ashburn,VA,,53,1069,10,57,57,28,48,57,39,40,57,57,57,57,57,57,57,57,40,57,57,57,26,40
+31,George C. Marshall High School,C,,Falls Church,VA,,54,1167,57,57,57,57,42,57,46,57,31,57,57,57,57,57,22,57,57,57,57,57,57,57
+71,George Washington University Online High School,,,Washington,DC,,55,1233,57,48,57,57,57,57,57,57,57,57,57,57,57,57,57,57,45,57,57,57,57,57
+51,Oakton High School,B,,Vienna,VA,,56,1254,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57,57
