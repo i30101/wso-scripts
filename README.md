@@ -18,7 +18,7 @@ Finds every single conflict for each event, marginally useful for coming up with
 ![version](https://img.shields.io/badge/release-v1.0.1-blue)
 ![python-versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11-limegreen)
 
-Reads and decrypts locally stored (!) email files for MySchoolBucks dues and obtains individual t-shirt preferences
+Reads and decrypts locally stored email files for MySchoolBucks dues and obtains individual t-shirt preferences using base64 decoding
 
 
 ### Dependencies
