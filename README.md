@@ -80,5 +80,5 @@ Running your mBot:
 
 ### Code Setup - Detector Building
 
-Ignore the LiquidCrystal library if you are 
+Ignore the LiquidCrystal library if you are using a laptop to display your readings.
 
