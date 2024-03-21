@@ -1,1 +1,2 @@
-- this repository is oudated and will soon be deleted
+- remove ranking and team information
+- refactor programming resources for regional teams
