@@ -1,2 +1,3 @@
 - remove ranking and team information
 - refactor programming resources for regional teams
+- add gryo code to robot-tour once complete

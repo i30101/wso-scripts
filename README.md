@@ -82,3 +82,7 @@ Running your mBot:
 
 Ignore the LiquidCrystal library if you are using a laptop to display your readings.
 
+
+## robot-tour
+
+This folder contains files for the 2023-2024 Robot Tour event. C++ and VexIQ implementations both added.
