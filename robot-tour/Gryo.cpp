@@ -144,7 +144,7 @@ void turnLeft(int times) { addMovement(5, times, 0); }
 
 void run(double targetTime) {
   double travelTime = targetTime - turnTime;
-  double rotations = totalDistance / 20.0;
+  double rotations = totalDistance / 19.0;
   RPM = (rotations / travelTime) * 60.0;
 
   Brain.Screen.clearScreen();
