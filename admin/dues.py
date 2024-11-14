@@ -11,7 +11,7 @@ import base64
 
 
 # filepath
-FILEPATH = "C:\\Users\\Andrew\\Downloads\\dues\\"
+FILEPATH = "C:\\Users\\Andrew\\Downloads\\Dues\\"
 
 
 # obtain file names

@@ -140,7 +140,7 @@ class CipherGeneratorApp:
         self.output_area = scrolledtext.ScrolledText(self.right_frame, width=98, height=20)
         self.output_area.pack()
 
-        # # generate button
+        # generate button
         self.generate_button = tk.Button(self.left_frame, text="Generate Ciphers", command=self.generate_ciphers)
         self.generate_button.grid(row=9, column=1, padx=5, pady=5)
 
